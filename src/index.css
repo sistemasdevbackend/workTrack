@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Force dark color-scheme on all selects so browser doesn't apply white background to options */
+select {
+  color-scheme: dark;
+}
+
+select option {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+/* ─── Rich Text Editor ──────────────────────────────────────────────── */
+
+.rt-editor:empty:before {
+  content: attr(data-placeholder);
+  color: #4b5563;
+  pointer-events: none;
+}
+
+/* Shared styles for both editor and rendered content */
+.rt-editor,
+.rt-content {
+  color: #e2e8f0;
+}
+
+.rt-editor ul,
+.rt-content ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0.25rem 0;
+}
+
+.rt-editor ol,
+.rt-content ol {
+  list-style: decimal;
+  padding-left: 1.25rem;
+  margin: 0.25rem 0;
+}
+
+.rt-editor li,
+.rt-content li {
+  margin: 0.1rem 0;
+}
+
+.rt-editor b,
+.rt-editor strong,
+.rt-content b,
+.rt-content strong {
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.rt-editor i,
+.rt-editor em,
+.rt-content i,
+.rt-content em {
+  font-style: italic;
+}
+
+.rt-editor u,
+.rt-content u {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.rt-editor s,
+.rt-editor strike,
+.rt-content s,
+.rt-content strike {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.rt-editor code,
+.rt-content code,
+.rt-editor .rt-code,
+.rt-content .rt-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8em;
+  background: #1e293b;
+  color: #7dd3fc;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+.rt-editor pre,
+.rt-content pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8em;
+  background: #0f172a;
+  color: #7dd3fc;
+  border: 1px solid #1e3a5f;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+  white-space: pre;
+}
+
+/* Tables */
+.rt-editor table,
+.rt-content table,
+.rt-editor .rt-table,
+.rt-content .rt-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0;
+  font-size: 0.8em;
+}
+
+.rt-editor th,
+.rt-editor .rt-th,
+.rt-content th,
+.rt-content .rt-th {
+  background: #1e293b;
+  color: #94a3b8;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #334155;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rt-editor td,
+.rt-editor .rt-td,
+.rt-content td,
+.rt-content .rt-td {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+  vertical-align: top;
+}
+
+.rt-editor tr:nth-child(even) td,
+.rt-content tr:nth-child(even) td {
+  background: #0f172a40;
+}
+
+/* Headings */
+.rt-editor h1, .rt-content h1 { font-size: 1.25em; font-weight: 700; color: #f1f5f9; margin: 0.5rem 0 0.25rem; }
+.rt-editor h2, .rt-content h2 { font-size: 1.1em;  font-weight: 700; color: #f1f5f9; margin: 0.5rem 0 0.25rem; }
+.rt-editor h3, .rt-content h3 { font-size: 1em;    font-weight: 700; color: #cbd5e1; margin: 0.4rem 0 0.2rem; }
+
+/* Paragraph spacing */
+.rt-editor p,
+.rt-content p {
+  margin: 0.2rem 0;
+}
